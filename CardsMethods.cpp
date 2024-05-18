@@ -21,12 +21,10 @@ void CardsSet::PrintSet() {
 CardsSet& CardsSet::MergeSets(const CardsSet& first, const CardsSet& second) {
     CardsSet* result = new CardsSet;
 
-    // Копируем элементы из первого множества
     for (const auto& card : first.cards) {
         result->AddElement(card);
     }
 
-    // Добавляем элементы из второго множества, если их нет в результирующем
     for (const auto& card : second.cards) {
         if (find(result->cards.begin(), result->cards.end(), card) == result->cards.end()) {
             result->AddElement(card);
