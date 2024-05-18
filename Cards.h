@@ -29,11 +29,14 @@ enum SUIT {
     SPADES = 3,
 };
 
+typedef SUIT suit_t;
+typedef DIGNITY dignity_t;
+
 const int MAX_SUIT_SIZE = 9;
 
 struct Card {
     string suit;
-    unsigned short dignity;
+    dignity_t dignity;
 
     bool operator==(const Card& other) const {
         return suit == other.suit && dignity == other.dignity;
@@ -54,6 +57,7 @@ public:
     CardsSet& MergeSets(const CardsSet& first, const CardsSet& second);
     CardsSet& CrossSets(const CardsSet& first, const CardsSet& second);
     CardsSet& SeparateSets(const CardsSet& first, const CardsSet& second);
+
     void AddElement(const Card& card);
     void DelElement(const Card& card);
     void PrintSet() ;

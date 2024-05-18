@@ -18,6 +18,7 @@ void CardsSet::PrintSet() {
     }
 }
 
+
 CardsSet& CardsSet::MergeSets(const CardsSet& first, const CardsSet& second) {
     CardsSet* result = new CardsSet;
 
@@ -45,7 +46,7 @@ CardsSet& CardsSet::CrossSets(const CardsSet& first, const CardsSet& second) {
     return *result;
 }
 
-CardsSet& CardsSet::SeparateSets(const CardsSet& first, const CardsSet& second) {
+CardsSet& CardsSet::operator-(const CardsSet& first, const CardsSet& second) {
     CardsSet* result = new CardsSet;
     vector<Card> sortedFirst = first.cards;
     vector<Card> sortedSecond = second.cards;
