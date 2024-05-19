@@ -24,11 +24,11 @@ int main() {
     secondset.PrintSet();
 
     cout << "Merge of sets :" << endl;
-    firstset.MergeSets(firstset, secondset).PrintSet();
+    (firstset + secondset).PrintSet();
     cout << "Cross of sets :" << endl;
-    firstset.CrossSets(firstset, secondset).PrintSet();
+    (firstset - secondset).PrintSet();
     cout << "Intersection of sets :" << endl;
-    firstset.SeparateSets(firstset, secondset).PrintSet();
+    (firstset / secondset).PrintSet();
 
     return 0;
 }

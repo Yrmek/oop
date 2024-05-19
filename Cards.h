@@ -54,9 +54,9 @@ struct Card {
 
 class CardsSet {
 public:
-    CardsSet& MergeSets(const CardsSet& first, const CardsSet& second);
-    CardsSet& CrossSets(const CardsSet& first, const CardsSet& second);
-    CardsSet& SeparateSets(const CardsSet& first, const CardsSet& second);
+    CardsSet& operator+( const CardsSet& second);
+    CardsSet& operator-( const CardsSet& second);
+    CardsSet& operator/( const CardsSet& second);
 
     void AddElement(const Card& card);
     void DelElement(const Card& card);

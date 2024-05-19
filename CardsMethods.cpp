@@ -19,10 +19,10 @@ void CardsSet::PrintSet() {
 }
 
 
-CardsSet& CardsSet::MergeSets(const CardsSet& first, const CardsSet& second) {
+CardsSet& CardsSet::operator+( const CardsSet& second) {
     CardsSet* result = new CardsSet;
 
-    for (const auto& card : first.cards) {
+    for (const auto& card : this->cards) {
         result->AddElement(card);
     }
 
@@ -35,9 +35,9 @@ CardsSet& CardsSet::MergeSets(const CardsSet& first, const CardsSet& second) {
     return *result;
 }
 
-CardsSet& CardsSet::CrossSets(const CardsSet& first, const CardsSet& second) {
+CardsSet& CardsSet::operator/( const CardsSet& second) {
     CardsSet* result = new CardsSet;
-    vector<Card> sortedFirst = first.cards;
+    vector<Card> sortedFirst = this->cards;
     vector<Card> sortedSecond = second.cards;
     sort(sortedFirst.begin(), sortedFirst.end());
     sort(sortedSecond.begin(), sortedSecond.end());
@@ -46,9 +46,9 @@ CardsSet& CardsSet::CrossSets(const CardsSet& first, const CardsSet& second) {
     return *result;
 }
 
-CardsSet& CardsSet::operator-(const CardsSet& first, const CardsSet& second) {
+CardsSet& CardsSet::operator-( const CardsSet& second) {
     CardsSet* result = new CardsSet;
-    vector<Card> sortedFirst = first.cards;
+    vector<Card> sortedFirst = this->cards;
     vector<Card> sortedSecond = second.cards;
     sort(sortedFirst.begin(), sortedFirst.end());
     sort(sortedSecond.begin(), sortedSecond.end());
